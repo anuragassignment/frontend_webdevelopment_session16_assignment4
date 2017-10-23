@@ -1,0 +1,17 @@
+.isValid {
+  border: 1px solid green;
+}
+
+.isInValid {
+  border: 1px solid red;
+}
+
+form span.bg-warning {
+  color: red;
+  font-size: 1.3em;
+  background-color: #EEEEEE;
+  vertical-align: middle;
+}
+form span.bg-warning i {
+    vertical-align: text-top;
+}

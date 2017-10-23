@@ -1,0 +1,21 @@
+<section class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div>
+        <a class="navbar-brand" routerLink="/">Brand</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- navbar links highlighted through routerLinkActive directive -->
+        <ul class="nav navbar-nav">
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Home</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['/registration']">Registration</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['/users']">Users</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li>
+          <li routerLinkActive="active"><a [routerLink]="['/member']">Member's Area</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+<!-- router outlet provided where the components view related to routes are loaded -->
+<router-outlet></router-outlet>

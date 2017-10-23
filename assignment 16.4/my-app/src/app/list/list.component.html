@@ -1,0 +1,24 @@
+<!-- <section class="container">
+  shows the form values in json format
+  <p class="alert alert-success">Form Value {{personsList | json}}</p>
+</section> -->
+<!-- section displays the submited form data in the view -->
+
+<section class="container">
+  <!-- trigger defined in HTML -->
+  <div class="panel panel-default" [@dataIn]="in" (@dataIn.start)="animationStarted($event)" (@dataIn.done)="animationDone($event)">
+    <div class="panel-heading">Registered users</div>
+    <!-- search box input -->
+    <input type="text" [(ngModel)]='coursestat' size="40" placeholder="filter based on course: e.g Web Development">
+
+    <!-- List group -->
+    <ul class="list-group">
+      <!-- trigger defined in HTML-->
+      <li class="list-group-item" (mouseover)="onMouseover(i)" (mouseleave)="onMouseleave(i)" [@usrSt]="st[i]" (@usrSt.start)="animationStarted($event)"
+        (@usrSt.done)="animationDone('$event')" [routerLink]="['/users', i+1, person.name]" *ngFor="let person of (personsList | filter:coursestat:'chosenCourse');  let i = index">username:&nbsp;&nbsp;{{person.name | capitalize}} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; email:&nbsp;&nbsp;{{person.email}}
+        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; DOB: &nbsp;&nbsp;{{person.date | date: 'd/M/y'}} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Address:
+        &nbsp;&nbsp;{{person.address}} &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Course Chosen: &nbsp;&nbsp;{{person.chosenCourse
+        | uppercase}}</li>
+    </ul>
+  </div>
+</section>
